@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(32, 31, 31);
+}
+
+#intro h1{
+    color: rgb(255, 166, 0);
+}
+
+#div-infos{
+    background-color: blue;
+    display: grid;
+    width: 70vh;
+}
+#plate-infos{
+    padding: 0.5rem;
+    background-color: rgb(0, 0, 0);
+    width: 50%;
+    margin-left: 80vh;
+    margin-top: -190vh;
+}
+
+.div-plates{
+    background-color: rgb(19, 18, 18);
+    font-size: 1.5rem;
+    color: white;
+}
+
+.button-receita{
+    margin: 0.5rem;
+    padding: 0.7rem;
+    background-color: rgb(223, 226, 31);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'monospace';
+    opacity: 0.8;
+}
+
+.button-receita:hover{
+    opacity: 1;
+    color: rgb(14, 13, 13);
+}
+
+.hide{
+    display: none;
+}
+
+.green{
+    background-color: rgb(0, 255, 0);
+}
