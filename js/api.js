@@ -9,27 +9,32 @@ async function consumirApi() {
 
     const resposta =  await fetch(url)
     const dados = await resposta.json()
+    console.log(dados)
 
-    dados.recipes.forEach((receita)=>{
+    dados.recipes.forEach((recipe)=>{
 
         const button = document.createElement("button")
-        button.classList.add("button-receita")
+        button.classList.add("button-recipe")
 
-        const nomeReceita = receita.name
-        button.innerText = nomeReceita
-        button.id = receita.id
+        const nameRecipe = recipe.name
+        button.innerText = nameRecipe
+        
+        const ingredientsName = recipe.ingredients
+        const calories = recipe.caloriesPerServing
+       const timePrep = recipe.prepTimeMinutes
 
         divInfos.appendChild(button)
 
         button.addEventListener("click", () =>{
             console.log(button.id)
 
-           const buttons = divInfos.querySelectorAll(".button-receita")
+           const buttons = divInfos.querySelectorAll(".button-recipe")
            buttons.forEach((el) => el.classList.remove("green"))
            
             button.classList.add("green")
             plateInfos.classList.remove("hide")
-            showPlateInfos(button.id, nomeReceita, receita.ingredients)
+            plateInfos.innerHTML = ""
+            showPlateInfos(nameRecipe, ingredientsName, calories, timePrep)
         })
     })
 
@@ -42,14 +47,26 @@ async function consumirApi() {
     
 consumirApi()
 
-function showPlateInfos(id, prato, ingredientes){
+
+function showPlateInfos(plate, ingredients, calories, timePrep){
   
     const div = document.createElement("div")
     const ul = document.createElement("ul")
 
-        div.classList.add("hide")
+    const namePlate = document.createElement("h2")
+    namePlate.id = "name-plate"
+
+    const counterCalories = document.createElement("p")
+    counterCalories.id = "counter-calories"
+    counterCalories.textContent = `Amount of calories: ${calories} grams`
+
+    const prepTime = document.createElement("p")
+    prepTime.id = "time-prep"
+    prepTime.textContent = `Preparation time: ${timePrep} minutes`
+
+    div.classList.add("hide")
     
-    ingredientes.forEach((ingredient)=>{
+    ingredients.forEach((ingredient)=>{
         div.classList.add("div-plates")
         div.classList.remove("hide")
 
@@ -59,10 +76,14 @@ function showPlateInfos(id, prato, ingredientes){
         li.classList.add("li-ingredient")
         li.textContent = ingredient
 
-        plateInfos.appendChild(div)
+        namePlate.textContent = plate
+
+        div.appendChild(namePlate)
         div.appendChild(ul)
         ul.appendChild(li)
-
+        div.appendChild(counterCalories)
+        div.appendChild(prepTime)
+        plateInfos.appendChild(div)
     })
 }
 
