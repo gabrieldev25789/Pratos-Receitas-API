@@ -2,6 +2,8 @@ const url = "https://dummyjson.com/recipes"
 
 const plateInfos = document.querySelector("#plate-infos")
 
+const imgContainer = document.querySelector("#img-container")
+
 async function consumirApi() {
     const divInfos = document.querySelector("#div-infos")
 
@@ -21,7 +23,8 @@ async function consumirApi() {
         
         const ingredientsName = recipe.ingredients
         const calories = recipe.caloriesPerServing
-       const timePrep = recipe.prepTimeMinutes
+        const timePrep = recipe.prepTimeMinutes
+        const img = recipe.image
 
         divInfos.appendChild(button)
 
@@ -34,7 +37,7 @@ async function consumirApi() {
             button.classList.add("green")
             plateInfos.classList.remove("hide")
             plateInfos.innerHTML = ""
-            showPlateInfos(nameRecipe, ingredientsName, calories, timePrep)
+            showPlateInfos(nameRecipe, ingredientsName, calories, timePrep, img)
         })
     })
 
@@ -48,7 +51,7 @@ async function consumirApi() {
 consumirApi()
 
 
-function showPlateInfos(plate, ingredients, calories, timePrep){
+function showPlateInfos(plate, ingredients, calories, timePrep, img){
   
     const div = document.createElement("div")
     const ul = document.createElement("ul")
@@ -76,6 +79,12 @@ function showPlateInfos(plate, ingredients, calories, timePrep){
         li.classList.add("li-ingredient")
         li.textContent = ingredient
 
+        const foodImg = document.createElement("img")
+        img.id = "food-img"
+        foodImg.src = `${img}` 
+        imgContainer.innerHTML = ""
+        imgContainer.appendChild(foodImg)
+
         namePlate.textContent = plate
 
         div.appendChild(namePlate)
@@ -83,6 +92,7 @@ function showPlateInfos(plate, ingredients, calories, timePrep){
         ul.appendChild(li)
         div.appendChild(counterCalories)
         div.appendChild(prepTime)
+        div.appendChild(imgContainer)
         plateInfos.appendChild(div)
     })
 }
