@@ -4,6 +4,9 @@ const plateInfos = document.querySelector("#plate-infos")
 
 const imgContainer = document.querySelector("#img-container")
 
+const extraInfosContainer = document.querySelector("#extra-infos-container")
+const openBtn = document.querySelector("#open-prep")
+
 async function consumirApi() {
     const divInfos = document.querySelector("#div-infos")
 
@@ -25,12 +28,11 @@ async function consumirApi() {
         const calories = recipe.caloriesPerServing
         const timePrep = recipe.prepTimeMinutes
         const img = recipe.image
+        const instructions = recipe.instructions
 
         divInfos.appendChild(button)
 
         button.addEventListener("click", () =>{
-            console.log(button.id)
-
            const buttons = divInfos.querySelectorAll(".button-recipe")
            buttons.forEach((el) => el.classList.remove("green"))
            
@@ -38,6 +40,8 @@ async function consumirApi() {
             plateInfos.classList.remove("hide")
             plateInfos.innerHTML = ""
             showPlateInfos(nameRecipe, ingredientsName, calories, timePrep, img)
+            extraInfosContainer.innerHTML = ""
+            instructionPrep(instructions)
         })
     })
 
@@ -97,3 +101,22 @@ function showPlateInfos(plate, ingredients, calories, timePrep, img){
     })
 }
 
+function instructionPrep(instructions){
+    const instructionsInfo = document.createElement("p")
+    instructionsInfo.id = "instructions-info"
+    instructionsInfo.textContent = `Preparation mode: ${instructions}`
+
+    extraInfosContainer.appendChild(instructionsInfo)
+    document.body.appendChild(extraInfosContainer)
+
+    console.log(instructionsInfo)
+}
+
+openBtn.addEventListener("click", () =>{
+    extraInfosContainer.classList.toggle("hide")
+    if(!extraInfosContainer.classList.contains("hide")){
+        openBtn.innerHTML = "Close Prep mode"
+    } else{
+        openBtn.innerHTML = "Open Prep mode"
+    }
+})
