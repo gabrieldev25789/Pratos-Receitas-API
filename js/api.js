@@ -4,8 +4,10 @@ const plateInfos = document.querySelector("#plate-infos")
 
 const imgContainer = document.querySelector("#img-container")
 
-const extraInfosContainer = document.querySelector("#extra-infos-container")
+const prepModeContainer = document.querySelector("#prep-mode-info")
 const openBtn = document.querySelector("#open-prep")
+
+const extraInfosContainer = document.querySelector("#extra-infos-container")
 
 async function consumirApi() {
     const divInfos = document.querySelector("#div-infos")
@@ -28,20 +30,29 @@ async function consumirApi() {
         const calories = recipe.caloriesPerServing
         const timePrep = recipe.prepTimeMinutes
         const img = recipe.image
+
         const instructions = recipe.instructions
+
+        const nation = recipe.cuisine
+        const rating = recipe.rating 
+        const serving = recipe.servings
+        const mealType = recipe.mealType 
 
         divInfos.appendChild(button)
 
         button.addEventListener("click", () =>{
-           const buttons = divInfos.querySelectorAll(".button-recipe")
-           buttons.forEach((el) => el.classList.remove("green"))
+            openBtn.classList.remove("hide")
+            const buttons = divInfos.querySelectorAll(".button-recipe")
+            buttons.forEach((el) => el.classList.remove("green"))
            
             button.classList.add("green")
             plateInfos.classList.remove("hide")
             plateInfos.innerHTML = ""
             showPlateInfos(nameRecipe, ingredientsName, calories, timePrep, img)
-            extraInfosContainer.innerHTML = ""
+            prepModeContainer.innerHTML = ""
             instructionPrep(instructions)
+            extraInfosContainer.innerHTML = ""
+            extraInfos(nation, rating, serving, mealType)
         })
     })
 
@@ -62,6 +73,10 @@ function showPlateInfos(plate, ingredients, calories, timePrep, img){
 
     const namePlate = document.createElement("h2")
     namePlate.id = "name-plate"
+
+    const title = document.createElement("h3")
+    title.id = "title-ingredient"
+    title.textContent = "Ingredients:"
 
     const counterCalories = document.createElement("p")
     counterCalories.id = "counter-calories"
@@ -92,6 +107,7 @@ function showPlateInfos(plate, ingredients, calories, timePrep, img){
         namePlate.textContent = plate
 
         div.appendChild(namePlate)
+        div.appendChild(title)
         div.appendChild(ul)
         ul.appendChild(li)
         div.appendChild(counterCalories)
@@ -106,17 +122,44 @@ function instructionPrep(instructions){
     instructionsInfo.id = "instructions-info"
     instructionsInfo.textContent = `Preparation mode: ${instructions}`
 
-    extraInfosContainer.appendChild(instructionsInfo)
-    document.body.appendChild(extraInfosContainer)
-
+    prepModeContainer.appendChild(instructionsInfo)
     console.log(instructionsInfo)
 }
 
 openBtn.addEventListener("click", () =>{
-    extraInfosContainer.classList.toggle("hide")
-    if(!extraInfosContainer.classList.contains("hide")){
+    prepModeContainer.classList.toggle("hide")
+    if(!prepModeContainer.classList.contains("hide")){
         openBtn.innerHTML = "Close Prep mode"
+        openBtn.classList.add("red")
     } else{
         openBtn.innerHTML = "Open Prep mode"
+        openBtn.classList.remove("red")
     }
 })
+
+function extraInfos(cuisine, rating, serving, mealType){
+    const nation = document.createElement("p")
+    nation.id = "nation"
+    nation.textContent = `Cuisine type: ${cuisine}`
+
+    const ratingRecipe = document.createElement("p")
+    ratingRecipe.id = "rating"
+    ratingRecipe.textContent = `rating: ${rating}`
+
+    const servingRecipe = document.createElement("p")
+    servingRecipe.id = "serving"
+    servingRecipe.textContent = `serves: ${serving} people`
+
+    const mealTypeRecipe = document.createElement("p")
+    mealTypeRecipe.id = "mealType"
+
+    mealType.forEach((type)=>{
+        mealTypeRecipe.textContent = `Type food: ${type}`
+    })
+
+    extraInfosContainer.appendChild(nation)
+    extraInfosContainer.appendChild(ratingRecipe)
+    extraInfosContainer.appendChild(servingRecipe)
+    extraInfosContainer.appendChild(mealTypeRecipe)
+    
+}
