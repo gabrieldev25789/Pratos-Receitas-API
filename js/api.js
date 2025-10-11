@@ -37,6 +37,7 @@ async function consumirApi() {
         const rating = recipe.rating 
         const serving = recipe.servings
         const mealType = recipe.mealType 
+        const imgCuisine = recipe.cuisine
 
         divInfos.appendChild(button)
 
@@ -52,7 +53,8 @@ async function consumirApi() {
             prepModeContainer.innerHTML = ""
             instructionPrep(instructions)
             extraInfosContainer.innerHTML = ""
-            extraInfos(nation, rating, serving, mealType)
+            extraInfosContainer.className = ""
+            extraInfos(nation, rating, serving, mealType, imgCuisine)
         })
     })
 
@@ -137,29 +139,42 @@ openBtn.addEventListener("click", () =>{
     }
 })
 
-function extraInfos(cuisine, rating, serving, mealType){
-    const nation = document.createElement("p")
-    nation.id = "nation"
-    nation.textContent = `Cuisine type: ${cuisine}`
+function extraInfos(cuisine, rating, serving, mealType, id){
+    extraInfosContainer.classList.add(id)
 
-    const ratingRecipe = document.createElement("p")
-    ratingRecipe.id = "rating"
+    const imgCuisine = document.createElement("img")
+    imgCuisine.src = `./img/${id}.png`
+    imgCuisine.classList.add("img-cuisine")
+    console.log(imgCuisine)
+
+    const ul = document.createElement("ul")
+    ul.id = "extra-infos-ul"
+
+    const nation = document.createElement("li")
+    nation.classList.add("extra-info-li")
+    nation.textContent = `Cuisine type: ${cuisine}`
+    console.log(nation.textContent)
+
+    const ratingRecipe = document.createElement("li")
+    ratingRecipe.classList.add("extra-info-li")
     ratingRecipe.textContent = `rating: ${rating}`
 
-    const servingRecipe = document.createElement("p")
-    servingRecipe.id = "serving"
+    const servingRecipe = document.createElement("li")
+    servingRecipe.classList.add("extra-info-li")
     servingRecipe.textContent = `serves: ${serving} people`
 
-    const mealTypeRecipe = document.createElement("p")
-    mealTypeRecipe.id = "mealType"
+    const mealTypeRecipe = document.createElement("li")
+    mealTypeRecipe.classList.add("extra-info-li")
 
     mealType.forEach((type)=>{
         mealTypeRecipe.textContent = `Type food: ${type}`
     })
 
-    extraInfosContainer.appendChild(nation)
-    extraInfosContainer.appendChild(ratingRecipe)
-    extraInfosContainer.appendChild(servingRecipe)
-    extraInfosContainer.appendChild(mealTypeRecipe)
+    ul.appendChild(nation)
+    ul.appendChild(ratingRecipe)
+    ul.appendChild(servingRecipe)
+    ul.appendChild(mealTypeRecipe)
+    extraInfosContainer.appendChild(ul)
+    extraInfosContainer.appendChild(imgCuisine)
     
 }
