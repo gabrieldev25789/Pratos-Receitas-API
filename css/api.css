@@ -1,3 +1,8 @@
+/**{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background-color: rgb(32, 31, 31);
 }
@@ -25,7 +30,7 @@ body{
     color: white;
 }
 
-.button-receita{
+.button-recipe{
     margin: 0.5rem;
     padding: 0.7rem;
     background-color: rgb(223, 226, 31);
@@ -39,7 +44,7 @@ body{
     opacity: 0.8;
 }
 
-.button-receita:hover{
+.button-recipe:hover{
     opacity: 1;
     color: rgb(14, 13, 13);
 }
@@ -50,4 +55,450 @@ body{
 
 .green{
     background-color: rgb(0, 255, 0);
+}
+
+#plate-infos {
+    background-color: rgb(0, 0, 0);
+    width: 50%;
+    min-height: 75vh;
+    max-height: 110vh;
+    margin-left: 80vh;
+    margin-top: -200vh;
+}
+
+#title-ingredient{
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.div-infos{
+    height: 100vh;
+}
+
+#counter-calories,
+#time-prep{
+    padding: 0.5rem 0.5rem;
+}
+.ul-ingredient{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+img{
+    width: 60vh;
+    height: 40vh;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+#section-prep{
+    text-align: center;
+    width: 40vh;
+    margin-left: 80vh;
+}
+
+#open-prep{
+    margin-top: 1rem;
+    width: 50vh;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(12, 228, 120);
+    margin-left: 27vh;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+#open-prep:hover{
+    opacity: 1;
+}
+
+#prep-mode-info{
+    margin: 2rem 22vh;
+    border-radius: 10px;
+    background-color: rgb(192, 175, 19);
+    color: white;
+    padding: 0.2rem;
+    font-size: 2rem;
+    width: 60vh;
+    font-family: sans-serif;
+    line-height: 50px;
+}
+
+.red{
+    background-color: red !important;
+    color: white !important;
+}
+
+#extra-infos-container{
+    font-size: 1.3rem;
+    padding: 0.7rem;
+    width: 100vh;
+    max-height: 56vh;
+    background-color: black;
+    margin-top: 10vh;
+    margin-left: 80vh;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.Italian{
+    background: linear-gradient(to right, #009246 0%, #ffffff 50%, #ce2b37 100%);
+}
+
+.Japanese{
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 45%, #bc002d 55%, #bc002d 100%);
+}
+.Asian{
+    background: linear-gradient(to right, #de2910 0%, #ffde00 100%);
+}
+.American{
+    background: linear-gradient(to right, #b22234, #ffffff, #3c3b6e);
+}
+.Mexican{
+    background: linear-gradient(to right, #006847, #ffffff, #ce1126);
+}
+.Mediterranean{
+    background: linear-gradient(to right, #AA151B, #F1BF00, #AA151B);
+}
+.Pakistani{
+    background: linear-gradient(to right, #ffffff, #006847);
+}
+.Moroccan{
+background: linear-gradient(to right, #C1272D 0%, #007A3D 100%);
+}
+.Korean{
+    background: linear-gradient(to right, #CD2E3A, #0047A0);
+}
+.Greek{
+    background: linear-gradient(to right, #0D5EAF, #FFFFFF);
+}
+.Thai{
+  background: linear-gradient(to right, #3232ce 30%, #db1010 100%);
+}
+.Indian{
+    background: linear-gradient(to bottom, #FF9933, #FFFFFF, #138808);
+}
+.Turkish{
+    background: linear-gradient(to right, #E30A17, #FFFFFF);
+}
+.Smoothie{
+    background: linear-gradient(to right, #b22234, #ffffff, #3c3b6e);
+}
+.Russian{
+    background: linear-gradient(to bottom, #FFFFFF, #0033A0, #D52B1E);
+}
+.Lebanese{
+    background: linear-gradient(to bottom, #ED1C24, #FFFFFF, #ED1C24);
+}
+.Brazilian{
+   background: linear-gradient(to right, #006600 10%, #FFCC00 45%, #3E4095 85%);
+
+}
+#extra-infos-ul{
+    text-align: left;
+    padding: 0 1rem; 
+}
+
+.extra-info-li{
+    border-bottom: 3px solid rgb(26, 19, 19);
+    width: 50vh;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: rgb(32, 30, 30);
+}
+
+.img-cuisine{
+    margin-top: -4rem;
+    margin-left: 50vh;
+    width: 45vh;
+    height: 45vh;
+}
+*/ 
+
+/* ===== RESET GERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #000000, #1a1a1a, #00ffcc);
+  font-family: sans-serif;
+}
+
+/* ===== ELEMENTOS PRINCIPAIS ===== */
+#intro h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 2.4rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+#div-infos {
+    background: linear-gradient(to bottom right, #0d0d0d, #002b25, #00ffcc33);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid #00ffcc44;
+    display: grid;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#div-infos h1{
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+    border-bottom: 3px solid #00ffcc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.div-infos {
+    height: 100%;
+}
+
+/* ===== INFORMAÇÕES DO PRATO ===== */
+#plate-infos {
+    padding: 0.5rem;
+    background-color: rgb(0, 0, 0);
+    width: 50%;
+    margin: 2rem auto;
+    border-radius: 10px;
+    color: white;
+    min-height: 60vh;
+}
+
+/* ===== LISTA DE PRATOS ===== */
+.div-plates {
+    background: linear-gradient(to bottom right, #0d0d0d, #002b25, #00ffcc33);
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+#name-plate{
+    text-transform: uppercase;
+    border-bottom: 3px solid white;
+    padding-bottom: 1.5rem;
+}
+#title-ingredient{
+    margin-top: 3rem;
+    text-transform: uppercase;
+    color: #70a9f0;
+    text-align: left;
+}
+.ul-ingredient{
+    padding: 1rem;
+}
+.li-ingredient{
+    text-align: left;
+    margin: 0.4rem;
+}
+
+#counter-calories,
+#time-prep{
+    text-align: left;
+    color: orange;
+    margin: 0.1rem 0;
+}
+
+/* ===== BOTÕES ===== */
+.button-recipe {
+    margin: 0.5rem;
+    padding: 0.7rem;
+    background-color: rgb(223, 226, 31);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: monospace;
+    opacity: 0.8;
+}
+
+.button-recipe:hover {
+    opacity: 1;
+    color: rgb(14, 13, 13);
+}
+
+/* ===== OUTROS ===== */
+.hide {
+    display: none;
+}
+.green {
+    background-color: rgb(0, 255, 0);
+}
+.red{
+    background-color: rgb(218, 8, 8) !important;
+    color: white !important;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin: 1rem auto;
+    display: block;
+}
+
+/* ===== SEÇÃO DE PREPARO ===== */
+#section-prep {
+    text-align: center;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+#open-prep {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(12, 228, 120);
+    cursor: pointer;
+    opacity: 0.9;
+}
+#open-prep:hover {
+    opacity: 1;
+}
+
+/* ===== MODO DE PREPARO ===== */
+#prep-mode-info {
+    margin: 2rem auto;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #0d0d0d, #002b25, #00ffcc33);
+    color: white;
+    padding: 1rem;
+    font-size: 1.6rem;
+    max-width: 700px;
+    font-family: sans-serif;
+    line-height: 1.8;
+}
+
+/* ===== INFORMAÇÕES EXTRAS ===== */
+#extra-infos-container {
+    font-size: 1.3rem;
+    padding: 1rem;
+    width: 90%;
+    max-width: 900px;
+    background-color: black;
+    margin: 3rem auto;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+#extra-infos-ul {
+    text-align: left;
+    padding: 0 1rem;
+}
+.extra-info-li {
+    border-bottom: 3px solid rgb(255, 255, 255);
+    width: 50%;
+    color: rgb(41, 41, 41);
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* ===== BANDEIRAS DE CULINÁRIA ===== */
+.Italian { background: linear-gradient(to right, #009246 0%, #ffffff 50%, #ce2b37 100%); }
+.Japanese { background: linear-gradient(to right, #ffffff 0%, #ffffff 45%, #bc002d 55%, #bc002d 100%); }
+.Asian { background: linear-gradient(to right, #de2910 0%, #ffde00 100%); }
+.American { background: linear-gradient(to right, #b22234, #ffffff, #3c3b6e); }
+.Mexican { background: linear-gradient(to right, #006847, #ffffff, #ce1126); }
+.Mediterranean { background: linear-gradient(to right, #AA151B, #F1BF00, #AA151B); }
+.Pakistani { background: linear-gradient(to right, #ffffff, #006847); }
+.Moroccan { background: linear-gradient(to right, #C1272D 0%, #007A3D 100%); }
+.Korean { background: linear-gradient(to right, #CD2E3A, #0047A0); }
+.Greek { background: linear-gradient(to right, #0D5EAF, #FFFFFF); }
+.Thai { background: linear-gradient(to right, #3232ce 30%, #db1010 100%); }
+.Indian { background: linear-gradient(to bottom, #FF9933, #FFFFFF, #138808); }
+.Turkish { background: linear-gradient(to right, #E30A17, #FFFFFF); }
+.Smoothie { background: linear-gradient(to right, #b22234, #ffffff, #3c3b6e); }
+.Russian { background: linear-gradient(to bottom, #FFFFFF, #0033A0, #D52B1E); }
+.Lebanese { background: linear-gradient(to bottom, #ED1C24, #FFFFFF, #ED1C24); }
+.Brazilian { background: linear-gradient(to right, #006600 10%, #FFCC00 45%, #3E4095 85%); }
+
+/* ===== IMAGEM DE CULINÁRIA ===== */
+.img-cuisine {
+    display: block;
+    margin: 2rem auto;
+    width: 70%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    #plate-infos {
+        width: 70%;
+        margin: 1.5rem auto;
+    }
+    #extra-infos-container {
+        width: 85%;
+    }
+    #prep-mode-info {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    #intro h1 {
+        font-size: 1.8rem;
+    }
+    #plate-infos {
+        width: 90%;
+        font-size: 1rem;
+    }
+    #extra-infos-container {
+        width: 90%;
+        font-size: 1rem;
+    }
+    .button-recipe {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+    img, .img-cuisine {
+        width: 100%;
+        height: auto;
+    }
+    #prep-mode-info {
+        width: 90%;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    #open-prep {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+}
+
+/* Telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    #intro h1 {
+        font-size: 1.5rem;
+    }
+    #plate-infos {
+        width: 95%;
+        padding: 0.5rem;
+    }
+    .extra-info-li {
+        font-size: 1rem;
+    }
+    #open-prep {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
 }
