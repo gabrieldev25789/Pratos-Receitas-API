@@ -18,7 +18,7 @@ OBS: Projeto em inglês
 
 📂 **Como usar**
 
-1. Abra o projeto no navegador:
+Deploy do projeto:
 ```bash
-index.html
+https://pratos-receitas-h8madsqao-gabriel-santos-projects-8c5915cb.vercel.app/
 
