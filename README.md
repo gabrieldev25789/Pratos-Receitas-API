@@ -20,5 +20,5 @@ OBS: Projeto em inglês
 
 Deploy do projeto:
 ```bash
-https://pratos-receitas-h8madsqao-gabriel-santos-projects-8c5915cb.vercel.app/
+https://pratos-receitas-api.vercel.app/
 
