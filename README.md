@@ -1,7 +1,7 @@
 🍽️ **Recipe Viewer**
 
 Projeto front-end que consome receitas de uma API e exibe informações detalhadas sobre cada prato, incluindo ingredientes, calorias, tempo de preparo, instruções, tipo de culinária e classificação. 
-OBS: Porjeto em inglês 
+OBS: Projeto em inglês 
 
 ---
 
