@@ -8,6 +8,7 @@ const prepModeContainer = document.querySelector("#prep-mode-info")
 const openBtn = document.querySelector("#open-prep")
 
 const extraInfosContainer = document.querySelector("#extra-infos-container")
+extraInfosContainer.classList.add("hide")
 
 async function consumirApi() {
     const divInfos = document.querySelector("#div-infos")
@@ -176,5 +177,4 @@ function extraInfos(cuisine, rating, serving, mealType, id){
     ul.appendChild(mealTypeRecipe)
     extraInfosContainer.appendChild(ul)
     extraInfosContainer.appendChild(imgCuisine)
-    
 }
