@@ -177,4 +177,5 @@ function extraInfos(cuisine, rating, serving, mealType, id){
     ul.appendChild(mealTypeRecipe)
     extraInfosContainer.appendChild(ul)
     extraInfosContainer.appendChild(imgCuisine)
+    
 }
