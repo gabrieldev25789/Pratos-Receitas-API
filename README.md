@@ -8,7 +8,7 @@ OBS: Projeto em inglês
 🖼️ **Preview do Projeto**
 
 <p align="center">
-  <img src="./imgs/print1.jpg" width="45%" />
+  <img src="./imgs/print.jpg" width="45%" />
   <img src="./imgs/print2.jpg" width="45%" />
 </p>
 
